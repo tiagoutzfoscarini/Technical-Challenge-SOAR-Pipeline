@@ -509,3 +509,494 @@
 2025-09-15 17:15:56,933; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
 2025-09-15 17:15:56,933; WARNING; Unknown indicator type: urls
 2025-09-15 17:15:56,933; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:37:37,319; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:37:37,320; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:37:37,320; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:37:37,320; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:37:37,320; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:37:37,320; WARNING; Unknown indicator type: urls
+2025-09-15 17:37:37,320; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:37:48,135; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:37:48,135; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:37:48,136; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:37:48,136; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:37:48,136; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:37:48,136; WARNING; Unknown indicator type: urls
+2025-09-15 17:37:48,136; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:38:51,644; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:38:51,644; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:38:51,644; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:38:51,644; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:38:51,644; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:38:51,644; WARNING; Unknown indicator type: urls
+2025-09-15 17:38:51,644; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:39:10,881; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:39:10,881; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:39:10,881; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:39:10,881; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:39:10,881; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:39:10,881; WARNING; Unknown indicator type: urls
+2025-09-15 17:39:10,881; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:40:54,248; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:40:54,250; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:40:54,250; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:40:54,251; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:40:54,251; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:40:54,251; WARNING; Unknown indicator type: urls
+2025-09-15 17:40:54,251; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:41:17,627; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:41:17,628; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:41:17,629; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:41:17,629; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:41:17,629; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:41:17,629; WARNING; Unknown indicator type: urls
+2025-09-15 17:41:17,629; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:42:28,747; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:42:28,747; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:42:28,747; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:42:28,747; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:42:28,747; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:42:28,747; WARNING; Unknown indicator type: urls
+2025-09-15 17:42:28,747; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:43:01,894; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:43:01,897; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:43:01,897; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:43:01,897; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:01,897; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:01,898; WARNING; Unknown indicator type: urls
+2025-09-15 17:43:01,898; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:43:12,596; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:43:12,596; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:43:12,596; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:43:12,596; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:12,596; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:12,596; WARNING; Unknown indicator type: urls
+2025-09-15 17:43:12,596; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:43:27,205; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:43:27,219; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:43:27,219; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:43:27,219; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:27,219; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:27,219; WARNING; Unknown indicator type: urls
+2025-09-15 17:43:27,219; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:43:31,534; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:43:31,536; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:43:31,536; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:43:31,536; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:31,536; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:31,536; WARNING; Unknown indicator type: urls
+2025-09-15 17:43:31,536; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:43:37,311; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:43:37,311; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:43:37,311; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:43:37,313; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:37,313; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:37,313; WARNING; Unknown indicator type: urls
+2025-09-15 17:43:37,313; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:43:58,698; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:43:58,698; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:43:58,698; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:43:58,698; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:58,698; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:43:58,698; WARNING; Unknown indicator type: urls
+2025-09-15 17:43:58,698; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:44:07,894; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:44:07,897; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:44:07,897; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:44:07,897; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:44:07,897; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:44:07,897; WARNING; Unknown indicator type: urls
+2025-09-15 17:44:07,897; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:44:30,447; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:44:30,447; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:44:30,447; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:44:30,447; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:44:30,447; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:44:30,447; WARNING; Unknown indicator type: urls
+2025-09-15 17:44:30,447; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:44:35,909; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:44:35,909; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:44:35,909; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:44:35,909; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:44:35,909; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:44:35,909; WARNING; Unknown indicator type: urls
+2025-09-15 17:44:35,909; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:45:21,576; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:45:21,580; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:45:21,581; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:45:21,581; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:45:21,581; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:45:21,581; WARNING; Unknown indicator type: urls
+2025-09-15 17:45:21,581; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:45:47,710; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:45:47,710; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:45:47,710; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:45:47,710; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:45:47,710; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:45:47,710; WARNING; Unknown indicator type: urls
+2025-09-15 17:45:47,710; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:45:58,869; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:45:58,873; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:45:58,873; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:45:58,873; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:45:58,873; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:45:58,873; WARNING; Unknown indicator type: urls
+2025-09-15 17:45:58,873; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:46:11,381; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:46:11,384; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:46:11,384; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:46:11,384; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:46:11,384; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:46:11,384; WARNING; Unknown indicator type: urls
+2025-09-15 17:46:11,384; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:46:18,163; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:46:18,164; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:46:18,164; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:46:18,164; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:46:18,164; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:46:18,164; WARNING; Unknown indicator type: urls
+2025-09-15 17:46:18,164; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:46:23,731; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:46:23,731; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:46:23,735; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:46:23,735; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:46:23,735; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:46:23,735; WARNING; Unknown indicator type: urls
+2025-09-15 17:46:23,735; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:46:34,213; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:46:34,215; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:46:34,215; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:46:34,215; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:46:34,215; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:46:34,215; WARNING; Unknown indicator type: urls
+2025-09-15 17:46:34,215; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:47:03,431; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:47:03,431; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:47:03,431; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:47:03,431; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:47:03,431; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:47:03,431; WARNING; Unknown indicator type: urls
+2025-09-15 17:47:03,431; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:48:06,664; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:48:06,664; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:48:06,664; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:48:06,664; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:48:06,664; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:48:06,664; WARNING; Unknown indicator type: urls
+2025-09-15 17:48:06,664; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:49:06,161; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:49:06,161; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:49:06,161; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:49:06,161; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:49:06,161; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:49:06,161; WARNING; Unknown indicator type: urls
+2025-09-15 17:49:06,161; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:50:54,715; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:50:54,715; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:50:54,715; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:50:54,715; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:50:54,715; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:50:54,715; WARNING; Unknown indicator type: urls
+2025-09-15 17:50:54,715; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:51:32,180; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:51:32,180; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:51:32,180; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:51:32,180; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:51:32,180; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:51:32,180; WARNING; Unknown indicator type: urls
+2025-09-15 17:51:32,180; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:51:51,163; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:51:51,164; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:51:51,164; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:51:51,164; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:51:51,164; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:51:51,164; WARNING; Unknown indicator type: urls
+2025-09-15 17:51:51,164; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:53:46,164; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:53:46,164; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:53:46,164; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:53:46,164; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:53:46,164; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:53:46,164; WARNING; Unknown indicator type: urls
+2025-09-15 17:53:46,164; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:55:36,425; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:55:36,427; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:55:36,427; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:55:36,427; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:55:36,427; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:55:36,427; WARNING; Unknown indicator type: urls
+2025-09-15 17:55:36,427; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:56:29,278; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:56:29,278; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:56:29,278; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:56:29,278; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:56:29,278; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:56:29,278; WARNING; Unknown indicator type: urls
+2025-09-15 17:56:29,278; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:57:22,863; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:57:22,863; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:57:22,863; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:57:22,863; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:57:22,863; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:57:22,863; WARNING; Unknown indicator type: urls
+2025-09-15 17:57:22,863; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:58:01,254; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:58:01,254; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:58:01,254; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:58:01,254; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:58:01,254; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:58:01,254; WARNING; Unknown indicator type: urls
+2025-09-15 17:58:01,262; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:58:21,113; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:58:21,113; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:58:21,113; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:58:21,113; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:58:21,113; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:58:21,113; WARNING; Unknown indicator type: urls
+2025-09-15 17:58:21,113; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:58:50,643; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:58:50,644; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:58:50,644; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:58:50,645; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:58:50,645; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:58:50,645; WARNING; Unknown indicator type: urls
+2025-09-15 17:58:50,645; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:58:56,576; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:58:56,577; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:58:56,578; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:58:56,578; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:58:56,578; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:58:56,578; WARNING; Unknown indicator type: urls
+2025-09-15 17:58:56,578; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 17:59:12,463; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 17:59:12,463; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 17:59:12,463; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 17:59:12,476; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:59:12,476; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 17:59:12,476; WARNING; Unknown indicator type: urls
+2025-09-15 17:59:12,476; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:01:26,671; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:01:26,672; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:01:26,672; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:01:26,672; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:01:26,672; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:01:26,672; WARNING; Unknown indicator type: urls
+2025-09-15 18:01:26,672; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:02:09,721; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:02:09,721; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:02:09,721; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:02:09,721; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:02:09,721; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:02:09,721; WARNING; Unknown indicator type: urls
+2025-09-15 18:02:09,721; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:04:07,165; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:04:07,167; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:04:07,167; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:04:07,167; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:04:07,167; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:04:07,167; WARNING; Unknown indicator type: urls
+2025-09-15 18:04:07,167; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:04:51,229; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:04:51,229; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:04:51,229; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:04:51,229; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:04:51,229; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:04:51,229; WARNING; Unknown indicator type: urls
+2025-09-15 18:04:51,229; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:05:05,562; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:05:05,562; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:05:05,562; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:05:05,562; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:05:05,562; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:05:05,562; WARNING; Unknown indicator type: urls
+2025-09-15 18:05:05,562; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:05:05,579; INFO; Indicator allowlisted: 7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0
+2025-09-15 18:06:07,800; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:06:07,805; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:06:07,805; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:06:07,805; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:06:07,805; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:06:07,805; WARNING; Unknown indicator type: urls
+2025-09-15 18:06:07,805; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:14:08,465; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:14:08,465; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:14:08,465; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:14:08,465; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:14:08,465; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:14:08,465; WARNING; Unknown indicator type: urls
+2025-09-15 18:14:08,465; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:14:08,465; INFO; Alert triaged: severity=100, classification=Critical, suppressed=False
+2025-09-15 18:18:21,212; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:18:21,212; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:18:21,212; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:18:21,212; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:18:21,212; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:18:21,212; WARNING; Unknown indicator type: urls
+2025-09-15 18:18:21,212; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:18:52,060; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:18:52,060; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:18:52,060; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:18:52,060; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:18:52,060; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:18:52,060; WARNING; Unknown indicator type: urls
+2025-09-15 18:18:52,060; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:19:08,114; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:19:08,115; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:19:08,115; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:19:08,115; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:19:08,115; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:19:08,115; WARNING; Unknown indicator type: urls
+2025-09-15 18:19:08,115; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:20:21,155; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:20:21,156; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:20:21,156; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:20:21,156; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:20:21,156; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:20:21,156; WARNING; Unknown indicator type: urls
+2025-09-15 18:20:21,156; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:20:21,159; INFO; Alert triaged: severity=100, classification=Critical, suppressed=False
+2025-09-15 18:20:51,664; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:20:51,664; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:20:51,664; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:20:51,664; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:20:51,664; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:20:51,664; WARNING; Unknown indicator type: urls
+2025-09-15 18:20:51,664; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:21:01,455; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:21:01,456; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:21:01,457; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:21:01,457; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:21:01,457; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:21:01,457; WARNING; Unknown indicator type: urls
+2025-09-15 18:21:01,457; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:21:14,389; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:21:14,390; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:21:14,391; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:21:14,391; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:21:14,391; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:21:14,391; WARNING; Unknown indicator type: urls
+2025-09-15 18:21:14,391; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:21:56,927; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:21:56,929; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:21:56,929; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:21:56,929; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:21:56,929; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:21:56,929; WARNING; Unknown indicator type: urls
+2025-09-15 18:21:56,929; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:21:56,932; INFO; Alert triaged: severity=100, classification=Critical, suppressed=False
+2025-09-15 18:22:27,807; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:22:27,807; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:22:27,807; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:22:27,807; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:22:27,807; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:22:27,807; WARNING; Unknown indicator type: urls
+2025-09-15 18:22:27,807; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:22:27,811; INFO; Alert triaged: severity=100, classification=Critical, suppressed=False
+2025-09-15 18:23:32,445; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:23:32,446; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:23:32,447; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:23:32,447; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:23:32,447; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:23:32,447; WARNING; Unknown indicator type: urls
+2025-09-15 18:23:32,447; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:23:32,449; INFO; Alert triaged: severity=100, classification=Critical, suppressed=False
+2025-09-15 18:23:39,289; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:23:39,289; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:23:39,289; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:23:39,289; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:23:39,289; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:23:39,289; WARNING; Unknown indicator type: urls
+2025-09-15 18:23:39,289; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:23:39,289; INFO; Alert triaged: severity=100, classification=Critical, suppressed=False
+2025-09-15 18:37:33,861; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:37:33,861; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:37:33,861; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:37:33,861; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:37:33,861; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:37:33,861; WARNING; Unknown indicator type: urls
+2025-09-15 18:37:33,861; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:38:15,215; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:38:15,215; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:38:15,215; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:38:15,215; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:38:15,215; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:38:15,215; WARNING; Unknown indicator type: urls
+2025-09-15 18:38:15,215; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:40:13,352; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:40:13,356; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:40:13,356; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:40:13,356; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:40:13,356; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:40:13,356; WARNING; Unknown indicator type: urls
+2025-09-15 18:40:13,356; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:40:28,711; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:40:28,711; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:40:28,711; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:40:28,711; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:40:28,711; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:40:28,711; WARNING; Unknown indicator type: urls
+2025-09-15 18:40:28,711; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:41:14,306; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:41:14,307; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:41:14,307; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:41:14,307; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:41:14,307; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:41:14,307; WARNING; Unknown indicator type: urls
+2025-09-15 18:41:14,307; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:41:23,489; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:41:23,490; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:41:23,490; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:41:23,490; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:41:23,490; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:41:23,490; WARNING; Unknown indicator type: urls
+2025-09-15 18:41:23,490; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:41:41,268; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:41:41,268; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:41:41,268; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:41:41,268; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:41:41,268; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:41:41,268; WARNING; Unknown indicator type: urls
+2025-09-15 18:41:41,268; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:42:15,136; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:42:15,136; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:42:15,136; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:42:15,136; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:42:15,136; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:42:15,136; WARNING; Unknown indicator type: urls
+2025-09-15 18:42:15,136; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:42:23,563; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:42:23,563; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:42:23,563; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:42:23,563; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:42:23,563; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:42:23,563; WARNING; Unknown indicator type: urls
+2025-09-15 18:42:23,563; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:42:56,895; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:42:56,895; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:42:56,895; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:42:56,895; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:42:56,895; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:42:56,895; WARNING; Unknown indicator type: urls
+2025-09-15 18:42:56,895; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:42:56,895; INFO; Alert triaged: severity=100, classification=Critical, suppressed=False
+2025-09-15 18:42:56,895; INFO; File loaded: history/source_alert_sen-001.json
+2025-09-15 18:42:56,911; INFO; Alert analysis output to file: out/incidents/sen-001.log.json
+2025-09-15 18:44:12,597; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:44:12,597; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:44:12,597; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:44:12,597; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:44:12,597; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:44:12,597; WARNING; Unknown indicator type: urls
+2025-09-15 18:44:12,597; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:44:12,597; INFO; Alert triaged: severity=100, classification=Critical, suppressed=False
+2025-09-15 18:44:12,597; INFO; File loaded: history/source_alert_sen-001.json
+2025-09-15 18:44:49,810; INFO; Alert file path: alerts/sentinel.json
+2025-09-15 18:44:49,810; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-15 18:44:49,810; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-15 18:44:49,810; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:44:49,810; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-15 18:44:49,810; WARNING; Unknown indicator type: urls
+2025-09-15 18:44:49,810; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-15 18:44:49,810; INFO; Alert triaged: severity=100, classification=Critical, suppressed=False
+2025-09-15 18:44:49,810; INFO; File loaded: history/source_alert_sen-001.json
+2025-09-15 18:44:49,810; INFO; Alert analysis output to file: out/incidents/sen-001.log.json

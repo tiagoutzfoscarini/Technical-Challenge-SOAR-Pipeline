@@ -143,62 +143,179 @@ def triage_alert(data):
     # Base severity by alert type
     data['severity'] = base_severity.get(data['type'], base_severity['Unknown'])
     
-    # Evaluate indicators
-    risk_boost = 0
-    flagged_indicators = 0
-    highest_risk = 'unknown'
-
+    # Load allowlist
     with open("configs/allowlists.yml", 'r') as file:
         allowlist = yaml.safe_load(file)
-        # print(json.dumps(allowlist, indent=4)) # DEBUG
     
-    for i in data['indicators']:
-        i['verdict'] = 'unknown'
-        i['flagged'] = False
-        i['suppressed'] = False
-        
-    #     for value in i['value']:
-    #         for indicator in value:
-    #             for entry in value[indicator]:
-    #                 match entry['risk']:
-    #                     case 'malicious':
-    #                         i['flagged'] = True
-    #                         i['verdict'] = 'malicious'
-    #                     case 'suspicious':
-    #                         i['flagged'] = True
-    #                         if i['verdict'] != 'malicious':
-    #                             i['verdict'] = 'suspicious'
-    #                     case _:
-    #                         pass
+    # Evaluate indicators
+    for indicator in data['indicators']:
+        for value in indicator['value']:
+            # Count all TI provider verdicts
+            verdict_count = {
+                'malicious': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'malicious'),
+                'suspicious': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'suspicious'),
+                'allowlisted': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'allowlisted'),
+                'other': sum(1 for entry in value[next(iter(value))] if entry['risk'] not in ['malicious', 'suspicious', 'allowlisted'])
+            }
+            
+            if (verdict_count['malicious'] > 0):
+                value['flagged'] = True
+                value['verdict'] = 'malicious'
+            elif (verdict_count['suspicious'] > 0):
+                value['flagged'] = True
+                value['verdict'] = 'suspicious'
+                        
+            # Check against allowlist
+            if indicator['type'] in allowlist['indicators']:
+                if next(iter(value)) in allowlist['indicators'][indicator['type']]:
+                    value['flagged'] = False
+                    value['verdict'] = 'allowlisted'
+                    logging.info(f"Indicator allowlisted: {next(iter(value))}")
 
-    #     if i['flagged']:
-    #         flagged_indicators += 1
+    # Count how many indicators are flagged as malicious or suspicious
+    flagged_indicators = sum(1 for i in data['indicators'] for value in i['value'] if value.get('flagged', False))
 
-    #         match i['verdict']:
-    #             case 'malicious':
-    #                 highest_risk = 'malicious'
-    #             case 'suspicious':
-    #                 if highest_risk != 'malicious':
-    #                     highest_risk = 'suspicious'
-    #             case _:
-    #                 pass
+    # Get the highest verdict among all indicators
+    highest_verdict = 'unknown'
 
-    #         # Check if the indicator is in the allowlist
-    #         if i['type'] in allowlist and any(indicator in allowlist[i['type']] for value in i['value'] for indicator in value):
-    #             i['suppressed'] = True
-    #             logging.info(f"Indicator suppressed by allowlist: {i}")
+    if any(value.get('verdict') == 'malicious' for i in data['indicators'] for value in i['value']):
+        highest_verdict = 'malicious'
+    elif any(value.get('verdict') == 'suspicious' for i in data['indicators'] for value in i['value']):
+        highest_verdict = 'suspicious'
 
-    # risk_boost += 20 if highest_risk == 'malicious' else 10 if highest_risk == 'suspicious' else 0
-    # if risk_boost > 0:
-    #     risk_boost += min(flagged_indicators - 1, 4) * 5  # Additional boost for multiple flagged indicators, capped at 4 (20 points max)
+    # Evaluate asset allowlist
+    # TODO: asset enrichment
 
+    # Calculate risk boost based on TI verdicts
+    # If all indicators are allowlisted, set severity to 0
+    if all(value.get('verdict') == 'allowlisted' for i in data['indicators'] for value in i['value']):
+        data['suppressed'] = True
+        data['severity'] = 0
+    else:
+        data['suppressed'] = False
+        # Apply risk boost based on highest verdict and number of flagged indicators (20 points for malicious, 10 for suspicious, plus 5 points for each additional flagged indicator, capped at +20 points)
+        risk_boost = 20 if highest_verdict == 'malicious' else 10 if highest_verdict == 'suspicious' else 0
+        if risk_boost > 0:
+            risk_boost += min(flagged_indicators - 1, 4) * 5  # Additional boost for multiple flagged indicators, capped at 4 (20 points max)
 
-    # data['severity'] += risk_boost
-    # data['severity'] = min(data['severity'], 100)  # Cap severity at 100
+        # Reduce 25 points from risk boost for each allowlisted indicator, capped at 4 (100 points max)
+        allowlisted_indicators = sum(1 for i in data['indicators'] for value in i['value'] if value.get('verdict') == 'allowlisted')
+        if allowlisted_indicators > 0:
+            risk_boost -= min(allowlisted_indicators, 4) * 25  # Reduce risk boost for allowlisted indicators, capped at 4 (20 points max)
+            risk_boost = max(risk_boost, 0)  # Ensure risk boost doesn't go negative
 
-    print(json.dumps(data, indent=4)) # DEBUG    
+        data['severity'] += risk_boost
+        data['severity'] = min(data['severity'], 100) # Cap severity at 100
+        data['severity'] = max(data['severity'], 0) # Ensure severity doesn't go negative
+
+    # Classify severity
+    severity_classification = {
+        range(0, 1): 'Suppressed', # 0
+        range(1, 40): 'Low', # 1-39
+        range(40, 70): 'Medium', # 40-69
+        range(70, 90): 'High', # 70-89
+        range(90, 101): 'Critical' # 90-100
+    }
+
+    for severity_range, classification in severity_classification.items():
+        if data['severity'] in severity_range:
+            data['severity_classification'] = classification
+            break
+
+    # Tag using Mitre ATT&CK framework
+    with open("configs/mitre_map.yml", 'r') as file:
+        mitre_mapping = yaml.safe_load(file)
+    
+    data['tags'] = mitre_mapping["types"].get(data['type'], mitre_mapping['defaults'])
+
+    data['tags'] += { f"suppressed={data['suppressed']}" }
+
+    logging.info(f"Alert triaged: severity={data['severity']}, classification={data['severity_classification']}, suppressed={data['suppressed']}")
 
     return data
+
+def get_file(file_path):
+    """
+    Read and return the content of a file
+    :param file_path: path to the file
+    :return: file content as dict
+    """
+    try:
+        with open(file_path, 'r') as file:
+            file_data = file.read()
+            logging.info(f"File loaded: {file_path}")
+            return json.loads(file_data)
+    except FileNotFoundError:
+        logging.error(f"File not found: {file_path}")
+        return {}
+
+def output_isolation_log(data):
+    """
+    Output the alert isolation log to a file
+    :param data: triaged alert data as dict
+    """
+    # TODO: output isolation log
+    output_path = f"out/isolation.log.json"
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    # with open(output_path, 'w') as output_file:
+    # <ISO-TS> isolate device_id=<ID> incident=<INCIDENT_ID> result=isolated
+    #     json.dump(data, output_file, indent=4)
+
+    logging.info(f"Alert analysis output to file: {output_path}")
+
+
+def output_incident(data):
+    """
+    Output the alert as an incident to a file according to certain criteria
+    :param data: triaged alert data as dict
+    """
+    # TODO: output incident
+    # Determine next incident ID
+    next_incident_id = 1
+    existing_incidents = os.listdir("out/incidents")
+    if existing_incidents:
+        next_incident_id = max(int(f.split('_')[1].split('.')[0]) for f in existing_incidents if f.startswith('incident_')) + 1
+
+    output_path = f"out/incidents/{next_incident_id}.json"
+
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
+    source_alert = get_file(f"history/source_alert_{data['alert_id']}.json")
+
+    # Remove 'suppressed=' tag from tags if present
+    output_format = {
+        "incident_id": data['alert_id'],
+        "source_alert": source_alert,
+        "asset": data['asset'],
+        "indicators": data['indicators'],
+        "triage": {
+            "severity": data['severity'],
+            "bucket": data['severity_classification'],
+            "tags": data['tags'],
+            "suppressed": data['suppressed']
+        },
+        "mitre": { "techniques": [tag for tag in data['tags'] if not str(tag).startswith('suppressed=')] },
+        "actions": [], # [ { "type":"isolate","target":"device:<ID>","result":"isolated","ts":"..."} ]
+        "timeline": [] # [ { "stage":"ingest|enrich|triage|respond", "ts":"...", "details":"..." } 
+    }
+
+    print(json.dumps(output_format, indent=2)) # DEBUG
+
+    # with open(output_path, 'w') as output_file:
+    #     json.dump(data, output_file, indent=4)
+
+    logging.info(f"Alert analysis output to file: {output_path}")
+
+
+def output_analyst_summary(data):
+    """
+    Output a summary for the analyst to a markdown file
+    :param data: triaged alert data as dict
+    """
+    # TODO: output analyst summary
+    pass
 
 
 def ingest_alert(alert_file_path):
@@ -209,7 +326,6 @@ def ingest_alert(alert_file_path):
     # Step 1. Read the alert
     with open(alert_file_path, 'r') as file:
             alert_data = file.read()
-            # print(alert_data)
 
     # Convert string data to dictionary
     alert_data = json.loads(alert_data)
@@ -224,7 +340,12 @@ def ingest_alert(alert_file_path):
     enriched_data = enrich(normalized_data)
 
     # Step 5. Triage
-    triage_alert(enriched_data)
+    triaged_alert = triage_alert(enriched_data)
+
+    # Step 6. Output the final alert data
+    # print(json.dumps(triaged_alert, indent=2))
+    # output_isolation_log(triaged_alert)
+    output_incident(triaged_alert)
 
 if __name__ == "__main__":
     set_logging()
