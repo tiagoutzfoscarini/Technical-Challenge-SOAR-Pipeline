@@ -13,3 +13,4 @@
 <ISO-TS> isolate device_id=dev-9001 incident=incident_0012 result=isolated
 <ISO-TS> isolate device_id=dev-9001 incident=incident_0013 result=isolated
 <ISO-TS> isolate device_id=dev-9001 incident=incident_0014 result=isolated
+<ISO-TS> isolate device_id=dev-9001 incident=incident_0002 result=isolated

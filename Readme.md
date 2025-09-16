@@ -6,7 +6,7 @@ Consolidated mock TI files into a centralized IOC list, as I would normally do f
 I would have a normalized IOC list by IOC type or provider first.
 
 ##### Enrichment
-Enrichment can definitely be optimized.
+Enrichment can definitely be optimized, but for this small implementation that is fine.
 
 ##### Final indicator view
 I could definitely present the provider evaluations differently (ex.: ["value", "providers": [{"source":"provider", "risk":"malicious"}]]), but as first version the way it is now is fine.

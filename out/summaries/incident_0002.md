@@ -1,0 +1,1 @@
+"# Analyst Summary Report\nIncident ID: incident_0002\nSeverity: \n\n## Indicators table\n\n## Tags\n\n\n## Mitre ATT&CK Techniques\n\n-  - \n\n-  - \n\n\n## Actions taken\n\n- {'type': 'isolate', 'target': 'device:dev-9001', 'result': 'isolated', 'ts': '2025-09-16T15:47:30.176460'}\n"

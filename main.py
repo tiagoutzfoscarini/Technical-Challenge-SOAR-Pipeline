@@ -34,7 +34,8 @@ def get_file(file_path):
         with open(file_path, 'r') as file:
             file_data = file.read()
             logging.info(f"File loaded: {file_path}")
-            return json.loads(file_data)
+            # return json.loads(file_data)
+            return json.loads(file_data) if file_path.endswith('.json') else yaml.safe_load(file_data) if file_path.endswith(('.yml', '.yaml')) else file_data
     except FileNotFoundError:
         logging.error(f"File not found: {file_path}")
         return {}
@@ -79,66 +80,103 @@ def enrich(data):
     :param data: normalized alert data as dict
     :return: enriched data as dict
     """
-    enrichment_source_path = "sources/ioc_list.json"
-    try:
-        with open(enrichment_source_path, 'r') as file:
-            enrichment_data = json.load(file)
-            logging.info(f"Enrichment source file loaded: {enrichment_source_path}")
-    except FileNotFoundError:
-        logging.error(f"Enrichment source file not found: {enrichment_source_path}")
+    # enrichment_source_path = "sources/ioc_list.json"
+    # try:
+    #     with open(enrichment_source_path, 'r') as file:
+    #         enrichment_data = json.load(file)
+    #         logging.info(f"Enrichment source file loaded: {enrichment_source_path}")
+    # except FileNotFoundError:
+    #     logging.error(f"Enrichment source file not found: {enrichment_source_path}")
+    #     return data
+
+    sources = get_file("configs/connectors.yml")
+
+    for provider in sources['providers']:
+        provider_path = sources['providers'][provider]['base_url'].replace("file://", "") # Local path
+
+        # Simulate provider API calls by reading local files
+        enrichment_data = []
+
+        match provider:
+            case 'anomali':
+                for file_name in os.listdir(provider_path):
+                    if file_name.startswith('anomali_') and file_name.endswith('.json'):
+                        file_path = os.path.join(provider_path, file_name)
+                        file_data = get_file(file_path)
+                        file_data['source'] = 'anomali'
+                        enrichment_data.append(file_data)
+            case 'defender_ti':
+                for file_name in os.listdir(provider_path):
+                    if file_name.startswith('defender_ti_') and file_name.endswith('.json'):
+                        file_path = os.path.join(provider_path, file_name)
+                        file_data = get_file(file_path)
+                        file_data['source'] = 'defender_ti'
+                        enrichment_data.append(file_data)
+            case 'reversinglabs':
+                for file_name in os.listdir(provider_path):
+                    if file_name.startswith('reversinglabs_') and file_name.endswith('.json'):
+                        file_path = os.path.join(provider_path, file_name)
+                        file_data = get_file(file_path)
+                        file_data['source'] = 'reversinglabs'
+                        enrichment_data.append(file_data)
+            case _:
+                logging.error(f"Unknown provider: {provider}")
+
+    if not enrichment_data:
+        logging.error("No enrichment data available")
         return data
-    
+
+    # Assuming only 1 value per indicator type
     # Adding only the values for score, risk, and source values
-    # I would also not enumerate the entire IOC list for searching, but since this is a small list I feel like this is acceptable for now
-    # TODO: change indicator view, move flagged, risk and allowlisted to the indicator level instead of the value level
-    # TODO: query local urls instead of single IOC file
     for i in data['indicators']:
+        flagged = 0 # Count how many providers flagged this IOC as malicious or suspicious
+        highest_risk = 'clean'
+        highest_score = 0
+        
         match i['type']:
             case 'ipv4':
-                for index, ip in enumerate(i['value']):
-                    i['value'] = [{f"{ip}": []}]
-
-                    # Check if the IP exists in the enrichment data
-                    for enriched_data in enrichment_data:
-                        if enriched_data['type'] == 'ipv4' and enriched_data['ip'] == ip:
-                            i['value'][index][ip].append({
-                                "source": enriched_data['source'],
-                                "risk": enriched_data.get('risk', enriched_data.get('reputation', enriched_data.get('classification', 'unknown'))),
-                                "score": enriched_data.get('score', enriched_data.get('confidence', 'unknown'))
-                            })
-                            logging.info(f"Indicator enriched: {i}")
-
+                for enriched_data in enrichment_data:
+                    if "ip" in enriched_data and enriched_data['ip'] == i['value'][0]:
+                        risk = enriched_data.get('risk', enriched_data.get('reputation', enriched_data.get('classification', 'unknown')))
+                        flagged += 1 if risk in ['malicious', 'suspicious'] else 0
+                        highest_risk = 'malicious' if risk == 'malicious' else 'suspicious' if highest_risk != 'malicious' and risk == 'suspicious' else highest_risks
+                        highest_score = max(highest_score, enriched_data.get('score', enriched_data.get('confidence', 0)))
             case 'domains':
-                for index, domain in enumerate(i['value']):
-                    i['value'] = [{f"{domain}": []}]
+                for enriched_data in enrichment_data:
+                    if "domain" in enriched_data and enriched_data['domain'] == i['value'][0]:
+                        flagged += 1 if enriched_data['risk'] in ['malicious', 'suspicious'] else 0
 
-                    # Check if the domain exists in the enrichment data
-                    for enriched_data in enrichment_data:
-                        if enriched_data['type'] == 'domain' and enriched_data['domain'] == domain:
-                            i['value'][index][domain].append({
-                                "source": enriched_data['source'],
-                                "risk": enriched_data.get('risk', enriched_data.get('reputation', enriched_data.get('classification', 'unknown'))),
-                                "score": enriched_data.get('score', enriched_data.get('confidence', 'unknown'))
-                            })
-                            logging.info(f"Indicator enriched: {i}")
+                        risk = enriched_data.get('risk', enriched_data.get('reputation', enriched_data.get('classification', 'unknown')))
+                        flagged += 1 if risk in ['malicious', 'suspicious'] else 0
+                        highest_risk = 'malicious' if risk == 'malicious' else 'suspicious' if highest_risk != 'malicious' and risk == 'suspicious' else highest_risks
+                        highest_score = max(highest_score, enriched_data.get('score', enriched_data.get('confidence', 0)))
+                        
+            case 'urls':
+                for enriched_data in enrichment_data:
+                    if "url" in enriched_data and enriched_data['url'] == i['value'][0]:
+                        flagged += 1 if enriched_data['risk'] in ['malicious', 'suspicious'] else 0
 
+                        risk = enriched_data.get('risk', enriched_data.get('reputation', enriched_data.get('classification', 'unknown')))
+                        flagged += 1 if risk in ['malicious', 'suspicious'] else 0
+                        highest_risk = 'malicious' if risk == 'malicious' else 'suspicious' if highest_risk != 'malicious' and risk == 'suspicious' else highest_risks
+                        highest_score = max(highest_score, enriched_data.get('score', enriched_data.get('confidence', 0)))
+                        
             case 'sha256':
-                for index, hash in enumerate(i['value']):
-                    i['value'] = [{f"{hash}": []}]
+                for enriched_data in enrichment_data:
+                    if "sha256" in enriched_data and enriched_data['sha256'] == i['value'][0]:
+                        flagged += 1 if enriched_data['risk'] in ['malicious', 'suspicious'] else 0
 
-                    # Check if the hash exists in the enrichment data
-                    for enriched_data in enrichment_data:
-                        if enriched_data['type'] == 'hash' and enriched_data['sha256'] == hash:
-                            i['value'][index][hash].append({
-                                "source": enriched_data['source'],
-                                "risk": enriched_data.get('risk', enriched_data.get('reputation', enriched_data.get('classification', 'unknown'))),
-                                "score": enriched_data.get('score', enriched_data.get('confidence', 'unknown'))
-                            })
-                            logging.info(f"Indicator enriched: {i}")
+                        risk = enriched_data.get('risk', enriched_data.get('reputation', enriched_data.get('classification', 'unknown')))
+                        flagged += 1 if risk in ['malicious', 'suspicious'] else 0
+                        highest_risk = 'malicious' if risk == 'malicious' else 'suspicious' if highest_risk != 'malicious' and risk == 'suspicious' else highest_risks
+                        highest_score = max(highest_score, enriched_data.get('score', enriched_data.get('confidence', 0)))
             case _:
-                for index, value in enumerate(i['value']):
-                    i['value'] = [{f"{value}": []}]
                 logging.warning(f"Unknown indicator type: {i['type']}")
+
+        # Default values if not found in enrichment data
+        i['risk'] = highest_risk if highest_risk != 'clean' else 'unknown'
+        i['score'] = highest_score if highest_score > 0 else 'unknown'
+        i['flagged'] = flagged
 
     return data
 
@@ -150,44 +188,27 @@ def evaluate_indicators(data, allowlist):
     :param allowlist: allowlist as dict
     :return: evaluated indicators as list, count of flagged indicators as int, highest verdict as str
     """
+    # Check against allowlist
     for indicator in data['indicators']:
-        for value in indicator['value']:
-            # Count all TI provider verdicts
-            verdict_count = {
-                'malicious': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'malicious'),
-                'suspicious': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'suspicious'),
-                'allowlisted': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'allowlisted'),
-                'other': sum(1 for entry in value[next(iter(value))] if entry['risk'] not in ['malicious', 'suspicious', 'allowlisted'])
-            }
-            
-            if (verdict_count['malicious'] > 0):
-                value['flagged'] = True
-                value['risk'] = 'malicious'
-            elif (verdict_count['suspicious'] > 0):
-                value['flagged'] = True
-                value['risk'] = 'suspicious'
-                        
-            # Check against allowlist
-            if indicator['type'] in allowlist['indicators'].keys():
-                if next(iter(value)) in allowlist['indicators'][indicator['type']]:
-                    value['flagged'] = False
-                    value['allowlisted'] = True
-                    logging.info(f"Indicator allowlisted: {next(iter(value))}")
-                else:
-                    value['allowlisted'] = False
+        if indicator['type'] in allowlist['indicators'].keys():
+            if indicator['value'][0] in allowlist['indicators'][indicator['type']]:
+                indicator['allowlisted'] = True
+                logging.info(f"Indicator allowlisted: {indicator['type']}={indicator['value'][0]}")
             else:
-                value['allowlisted'] = False
-                logging.warning(f"Unknown indicator type for allowlist check: {indicator['type']}")
+                indicator['allowlisted'] = False
+        else:
+            indicator['allowlisted'] = False
+            logging.warning(f"Unknown indicator type for allowlist check: {indicator['type']}")
 
     # Count how many indicators are flagged as malicious or suspicious
-    flagged_indicators = sum(1 for i in data['indicators'] for value in i['value'] if value.get('flagged', False))
+    flagged_indicators = sum(1 for i in data['indicators'] if i.get('risk') in ['malicious', 'suspicious'])
 
     # Get the highest verdict among all indicators
     highest_risk = 'unknown'
 
-    if any(value.get('risk') == 'malicious' for i in data['indicators'] for value in i['value']):
+    if any(indicator.get('risk') == 'malicious' for indicator in data['indicators']):
         highest_risk = 'malicious'
-    elif any(value.get('risk') == 'suspicious' for i in data['indicators'] for value in i['value']):
+    elif any(indicator.get('risk') == 'suspicious' for indicator in data['indicators']):
         highest_risk = 'suspicious'
 
     return data['indicators'], flagged_indicators, highest_risk
@@ -251,27 +272,27 @@ def triage_alert(data):
 
 
     # Evaluate all alert indicators, and check against allowlist
-    data['indicators'], flagged_indicators, highest_verdict = evaluate_indicators(data, allowlist)
+    data['indicators'], flagged_indicators, highest_risk = evaluate_indicators(data, allowlist)
 
     # Evaluate assets against allowlist
     data['asset'] = evaluate_assets(data, allowlist)
 
     # Calculate risk boost based on TI verdicts
     # If all indicators are allowlisted, set severity to 0
-    if all(value.get('verdict') == 'allowlisted' for i in data['indicators'] for value in i['value']):
+    if all(indicator.get('allowlisted') == True for indicator in data['indicators']):
         data['suppressed'] = True
         data['severity'] = 0
     else:
         data['suppressed'] = False
         # Apply risk boost based on highest verdict and number of flagged indicators (20 points for malicious, 10 for suspicious, plus 5 points for each additional flagged indicator, capped at +20 points)
-        risk_boost = 20 if highest_verdict == 'malicious' else 10 if highest_verdict == 'suspicious' else 0
+        risk_boost = 20 if highest_risk == 'malicious' else 10 if highest_risk == 'suspicious' else 0
         if risk_boost > 0:
             risk_boost += min(flagged_indicators - 1, 4) * 5  # Additional boost for multiple flagged indicators, capped at 4 (20 points max)
 
-        # Reduce 25 points from risk boost for each allowlisted indicator, capped at 4 (100 points max)
-        allowlisted_indicators = sum(1 for i in data['indicators'] for value in i['value'] if value.get('verdict') == 'allowlisted')
+        # Reduce 25 points from risk boost if an indicator is allowlisted
+        allowlisted_indicators = sum(1 for indicator in data['indicators'] if indicator.get('allowlisted') == True)
         if allowlisted_indicators > 0:
-            risk_boost -= min(allowlisted_indicators, 4) * 25  # Reduce risk boost for allowlisted indicators, capped at 4 (20 points max)
+            risk_boost -= 25  # Reduce risk boost for allowlisted indicators, capped at 4 (20 points max)
             risk_boost = max(risk_boost, 0)  # Ensure risk boost doesn't go negative
 
         data['severity'] += risk_boost
@@ -438,8 +459,9 @@ if __name__ == "__main__":
     incident = create_incident(triaged_alert_data)
 
     # Step 6. Actions and automated response
-    incident = take_response_action(incident)
-    incident = log_timeline("respond", datetime.now().isoformat(), incident)
+    if incident['triage']['suppressed'] == False:
+        incident = take_response_action(incident)
+        incident = log_timeline("respond", datetime.now().isoformat(), incident)
 
     # Step 7. Final outputs
     # Incident JSON

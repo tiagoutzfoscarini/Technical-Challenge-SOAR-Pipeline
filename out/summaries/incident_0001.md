@@ -1,0 +1,1 @@
+"# Analyst Summary Report\nIncident ID: incident_0001\nSeverity: \n\n## Indicators table\n\n## Tags\n\n\n## Mitre ATT&CK Techniques\n\n-  - \n\n-  - \n\n\n## Actions taken\n"

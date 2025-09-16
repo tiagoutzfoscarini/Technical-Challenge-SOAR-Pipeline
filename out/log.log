@@ -1646,3 +1646,456 @@
 2025-09-16 14:26:07,027; INFO; Device isolated: device_id=dev-9001, incident=incident_0014
 2025-09-16 14:26:07,027; INFO; Output file created: out/incidents/incident_0014.json
 2025-09-16 14:26:07,033; INFO; Output file created: out/summaries/incident_0014.md
+2025-09-16 14:47:03,036; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:47:03,038; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:47:03,038; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:47:03,038; INFO; Enrichment source file loaded: sources/ioc_list.json
+2025-09-16 14:47:03,038; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-16 14:47:03,038; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}, {'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-16 14:47:03,038; INFO; Indicator enriched: {'type': 'domains', 'value': [{'bad.example.net': [{'source': 'defender_ti', 'risk': 'malicious', 'score': 92}]}]}
+2025-09-16 14:47:03,038; WARNING; Unknown indicator type: urls
+2025-09-16 14:47:03,038; INFO; Indicator enriched: {'type': 'sha256', 'value': [{'7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0': [{'source': 'reversinglabs', 'risk': 'malicious', 'score': 95}]}]}
+2025-09-16 14:48:30,031; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:48:30,032; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:48:30,033; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:50:23,191; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:50:23,191; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:50:23,192; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:50:23,192; ERROR; File not found: configs/connnectors.yml
+2025-09-16 14:50:30,951; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:50:30,952; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:50:30,952; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:50:30,953; INFO; File loaded: configs/connectors.yml
+2025-09-16 14:51:27,596; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:51:27,596; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:51:27,596; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:51:27,596; INFO; File loaded: configs/connectors.yml
+2025-09-16 14:52:02,921; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:52:02,921; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:52:02,922; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:52:02,922; INFO; File loaded: configs/connectors.yml
+2025-09-16 14:52:07,535; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:52:07,535; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:52:07,535; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:52:07,535; INFO; File loaded: configs/connectors.yml
+2025-09-16 14:52:23,656; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:52:23,656; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:52:23,660; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:52:23,660; INFO; File loaded: configs/connectors.yml
+2025-09-16 14:53:05,532; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:53:05,532; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:53:05,532; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:53:05,532; INFO; File loaded: configs/connectors.yml
+2025-09-16 14:54:08,946; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:54:08,946; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:54:08,946; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:54:08,946; INFO; File loaded: configs/connectors.yml
+2025-09-16 14:54:23,217; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:54:23,217; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:54:23,217; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:54:23,217; INFO; File loaded: configs/connectors.yml
+2025-09-16 14:55:20,797; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:55:20,797; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:55:20,798; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:55:20,799; INFO; File loaded: configs/connectors.yml
+2025-09-16 14:58:44,757; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:58:44,758; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:58:44,758; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:58:44,759; INFO; File loaded: configs/connectors.yml
+2025-09-16 14:58:58,279; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 14:58:58,280; INFO; File loaded: alerts/sentinel.json
+2025-09-16 14:58:58,281; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 14:58:58,281; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:00:38,480; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:00:38,480; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:00:38,480; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:00:38,480; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:00:56,508; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:00:56,524; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:00:56,524; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:00:56,524; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:01:07,588; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:01:07,588; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:01:07,588; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:01:07,588; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:01:07,596; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:01:07,604; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:01:07,610; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:01:51,385; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:01:51,385; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:01:51,385; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:01:51,385; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:01:51,385; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:01:51,385; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:01:51,389; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:02:20,915; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:02:20,915; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:02:20,916; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:02:20,916; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:02:20,916; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:02:20,916; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:02:20,916; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:02:20,925; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:02:45,321; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:02:45,321; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:02:45,322; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:02:45,322; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:02:45,323; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:02:45,324; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:02:45,324; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:03:13,540; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:03:13,541; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:03:13,541; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:03:13,542; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:03:13,543; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:03:13,543; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:03:13,543; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:03:13,544; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:05:43,275; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:05:43,275; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:05:43,275; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:05:43,275; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:05:43,275; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:05:43,275; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:05:43,275; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:05:43,275; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:05:50,958; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:05:50,958; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:05:50,958; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:05:50,958; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:05:50,958; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:05:50,958; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:05:50,958; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:05:50,958; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:06:08,751; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:06:08,751; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:06:08,751; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:06:08,751; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:06:08,751; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:06:08,751; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:06:08,751; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:06:08,751; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:06:25,053; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:06:25,053; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:06:25,053; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:06:25,053; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:06:25,061; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:06:25,061; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:06:25,061; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:06:25,061; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:08:13,471; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:08:13,471; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:08:13,477; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:08:13,477; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:08:13,477; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:08:13,477; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:08:13,477; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:08:13,477; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:08:59,177; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:08:59,177; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:08:59,177; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:08:59,177; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:08:59,177; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:08:59,177; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:08:59,177; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:08:59,177; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:09:08,143; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:09:08,143; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:09:08,143; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:09:08,143; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:09:08,145; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:09:08,145; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:09:08,145; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:09:08,145; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:09:17,511; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:09:17,511; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:09:17,511; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:09:17,511; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:09:17,515; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:09:17,515; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:09:17,515; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:09:17,515; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:09:28,952; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:09:28,952; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:09:28,952; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:09:28,952; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:09:28,952; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:09:28,956; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:09:28,956; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:09:28,956; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:09:37,165; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:09:37,165; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:09:37,166; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:09:37,166; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:09:37,166; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:09:37,166; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:09:37,166; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:09:37,166; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:10:36,962; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:10:36,962; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:10:36,962; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:10:36,962; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:10:36,966; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:10:36,966; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:10:36,966; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:10:36,966; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:10:46,381; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:10:46,381; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:10:46,381; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:10:46,381; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:10:46,381; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:10:46,381; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:10:46,381; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:10:46,381; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:10:46,381; INFO; Indicator enriched: {'type': 'ipv4', 'value': [{'1.2.3.4': [{'source': 'anomali', 'risk': 'suspicious', 'score': 80}]}]}
+2025-09-16 15:11:33,386; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:11:33,386; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:11:33,386; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:11:33,391; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:11:33,392; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:11:33,392; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:11:33,392; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:11:33,392; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:11:33,392; INFO; Indicator enriched: {'type': 'ipv4', 'value': ['1.2.3.4'], 'risk': 'suspicious', 'score': 80}
+2025-09-16 15:12:40,417; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:12:40,417; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:12:40,417; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:12:40,417; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:12:40,418; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:12:40,418; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:12:40,418; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:12:40,418; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:13:03,267; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:13:03,271; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:13:03,271; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:13:03,271; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:13:03,271; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:13:03,271; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:13:03,271; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:13:03,271; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:14:33,877; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:14:33,877; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:14:33,878; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:14:33,878; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:14:33,878; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:14:33,878; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:14:33,878; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:14:33,878; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:15:13,092; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:15:13,092; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:15:13,092; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:15:13,097; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:15:13,097; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:15:13,097; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:15:13,097; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:15:13,097; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:15:36,496; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:15:36,496; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:15:36,496; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:15:36,496; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:15:36,496; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:15:36,496; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:15:36,496; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:15:36,496; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:16:27,897; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:16:27,897; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:16:27,897; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:16:27,897; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:16:27,897; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:16:27,897; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:16:27,897; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:16:27,897; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:16:38,660; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:16:38,660; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:16:38,660; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:16:38,660; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:16:38,662; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:16:38,662; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:16:38,662; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:16:38,662; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:16:41,897; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:16:41,897; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:16:41,903; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:16:41,903; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:16:41,903; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:16:41,903; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:16:41,903; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:16:41,903; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:17:52,660; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:17:52,660; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:17:52,660; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:17:52,660; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:17:52,660; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:17:52,660; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:17:52,660; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:17:52,660; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:18:03,780; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:18:03,780; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:18:03,780; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:18:03,780; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:18:03,780; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:18:03,780; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:18:03,780; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:18:03,780; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:18:38,045; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:18:38,045; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:18:38,046; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:18:38,047; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:18:38,048; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:18:38,048; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:18:38,049; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:18:38,049; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:19:43,544; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:19:43,544; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:19:43,544; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:19:43,544; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:19:43,544; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:19:43,544; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:19:43,544; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:19:43,544; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:20:00,260; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:20:00,260; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:20:00,260; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:20:00,267; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:20:00,267; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:20:00,267; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:20:00,267; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:20:00,267; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:20:57,040; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:20:57,040; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:20:57,040; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:20:57,040; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:20:57,040; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:20:57,040; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:20:57,040; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:20:57,040; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:29:51,435; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:29:51,435; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:29:51,443; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:29:51,443; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:29:51,443; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:29:51,443; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:29:51,443; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:29:51,443; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:33:01,952; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:33:01,952; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:33:01,952; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:33:01,952; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:33:01,956; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:33:01,956; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:33:01,956; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:33:01,956; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:33:29,885; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:33:29,885; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:33:29,885; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:33:29,885; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:33:29,885; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:33:29,888; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:33:29,888; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:33:29,888; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:34:49,825; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:34:49,825; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:34:49,829; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:34:49,829; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:34:49,830; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:34:49,830; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:34:49,830; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:34:49,830; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:35:47,046; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:35:47,046; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:35:47,046; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:35:47,046; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:35:47,046; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:35:47,052; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:35:47,052; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:35:47,052; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:36:09,300; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:36:09,300; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:36:09,300; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:36:09,300; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:36:09,300; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:36:09,300; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:36:09,300; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:36:09,300; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:36:28,228; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:36:28,228; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:36:28,229; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:36:28,230; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:36:28,231; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:36:28,231; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:36:28,231; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:36:28,232; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:36:28,240; INFO; Indicator allowlisted: ipv4=1.2.3.4
+2025-09-16 15:38:09,108; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:38:09,108; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:38:09,108; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:38:09,108; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:38:09,108; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:38:09,108; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:38:09,108; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:38:09,111; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:38:17,991; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:38:17,991; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:38:17,995; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:38:17,995; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:38:17,996; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:38:17,996; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:38:17,996; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:38:17,996; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:39:02,836; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:39:02,836; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:39:02,836; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:39:02,836; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:39:02,840; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:39:02,840; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:39:02,840; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:39:02,840; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:40:11,303; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:40:11,303; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:40:11,303; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:40:11,303; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:40:11,303; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:40:11,303; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:40:11,307; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:40:11,307; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:42:36,275; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:42:36,275; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:42:36,275; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:42:36,275; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:42:36,278; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:42:36,278; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:42:36,278; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:42:36,278; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:42:54,821; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:42:54,822; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:42:54,823; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:42:54,823; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:42:54,825; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:42:54,825; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:42:54,825; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:42:54,826; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:46:38,318; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:46:38,318; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:46:38,318; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:46:38,323; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:46:38,323; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:46:38,323; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:46:38,323; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:46:38,323; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:46:38,328; INFO; Alert triaged: severity=0, classification=Suppressed, suppressed=True
+2025-09-16 15:46:38,337; INFO; File loaded: history/source_alert_sen-001.json
+2025-09-16 15:46:38,338; INFO; Output file created: out/incidents/incident_0001.json
+2025-09-16 15:46:38,340; INFO; Output file created: out/summaries/incident_0001.md
+2025-09-16 15:47:30,168; INFO; Alert file path: alerts/sentinel.json
+2025-09-16 15:47:30,168; INFO; File loaded: alerts/sentinel.json
+2025-09-16 15:47:30,168; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 15:47:30,168; INFO; File loaded: configs/connectors.yml
+2025-09-16 15:47:30,168; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 15:47:30,172; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 15:47:30,172; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 15:47:30,172; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 15:47:30,172; INFO; Alert triaged: severity=85, classification=High, suppressed=False
+2025-09-16 15:47:30,172; INFO; File loaded: history/source_alert_sen-001.json
+2025-09-16 15:47:30,172; INFO; Device isolated: device_id=dev-9001, incident=incident_0002
+2025-09-16 15:47:30,176; INFO; Output file created: out/incidents/incident_0002.json
+2025-09-16 15:47:30,180; INFO; Output file created: out/summaries/incident_0002.md
