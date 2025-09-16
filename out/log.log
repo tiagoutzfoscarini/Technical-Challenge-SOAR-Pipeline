@@ -1,27 +1,27 @@
-2025-09-16 19:12:56,906; INFO; Alert file path: .\alerts\sentinel.json
-2025-09-16 19:12:56,906; INFO; File loaded: .\alerts\sentinel.json
-2025-09-16 19:12:56,907; INFO; Output file created: history/source_alert_sen-001.json
-2025-09-16 19:12:56,907; INFO; File loaded: configs/connectors.yml
-2025-09-16 19:12:56,907; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
-2025-09-16 19:12:56,908; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
-2025-09-16 19:12:56,908; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
-2025-09-16 19:12:56,908; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
-2025-09-16 19:12:56,909; INFO; Alert triaged: severity=85, classification=High, suppressed=False
-2025-09-16 19:12:56,913; INFO; File loaded: history/source_alert_sen-001.json
-2025-09-16 19:12:56,914; INFO; Device isolated: device_id=dev-9001, incident=incident_0001
-2025-09-16 19:12:56,915; INFO; Output file created: out/incidents/incident_0001.json
-2025-09-16 19:12:56,921; INFO; Output file created: out/summaries/incident_0001.md
-2025-09-16 19:12:58,206; INFO; Alert file path: .\alerts\sumologic.json
-2025-09-16 19:12:58,206; INFO; File loaded: .\alerts\sumologic.json
-2025-09-16 19:12:58,207; INFO; Output file created: history/source_alert_sumo-abc.json
-2025-09-16 19:12:58,207; INFO; File loaded: configs/connectors.yml
-2025-09-16 19:12:58,208; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
-2025-09-16 19:12:58,208; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
-2025-09-16 19:12:58,208; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
-2025-09-16 19:12:58,208; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
-2025-09-16 19:12:58,208; WARNING; Indicator value is empty for allowlist check: domains
-2025-09-16 19:12:58,208; WARNING; Indicator value is empty for allowlist check: sha256
-2025-09-16 19:12:58,209; INFO; Alert triaged: severity=65, classification=Medium, suppressed=False
-2025-09-16 19:12:58,210; INFO; File loaded: history/source_alert_sumo-abc.json
-2025-09-16 19:12:58,210; INFO; Output file created: out/incidents/incident_0002.json
-2025-09-16 19:12:58,215; INFO; Output file created: out/summaries/incident_0002.md
+2025-09-16 19:13:35,753; INFO; Alert file path: .\alerts\sentinel.json
+2025-09-16 19:13:35,753; INFO; File loaded: .\alerts\sentinel.json
+2025-09-16 19:13:35,754; INFO; Output file created: history/source_alert_sen-001.json
+2025-09-16 19:13:35,754; INFO; File loaded: configs/connectors.yml
+2025-09-16 19:13:35,755; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 19:13:35,755; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 19:13:35,755; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 19:13:35,755; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 19:13:35,757; INFO; Alert triaged: severity=85, classification=High, suppressed=False
+2025-09-16 19:13:35,760; INFO; File loaded: history/source_alert_sen-001.json
+2025-09-16 19:13:35,761; INFO; Device isolated: device_id=dev-9001, incident=incident_0001
+2025-09-16 19:13:35,762; INFO; Output file created: out/incidents/incident_0001.json
+2025-09-16 19:13:35,769; INFO; Output file created: out/summaries/incident_0001.md
+2025-09-16 19:13:36,764; INFO; Alert file path: .\alerts\sumologic.json
+2025-09-16 19:13:36,764; INFO; File loaded: .\alerts\sumologic.json
+2025-09-16 19:13:36,765; INFO; Output file created: history/source_alert_sumo-abc.json
+2025-09-16 19:13:36,765; INFO; File loaded: configs/connectors.yml
+2025-09-16 19:13:36,766; INFO; File loaded: mocks/ti\defender_ti_domain_bad.example.net.json
+2025-09-16 19:13:36,766; INFO; File loaded: mocks/ti\reversinglabs_sha256_7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0.json
+2025-09-16 19:13:36,766; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.4.json
+2025-09-16 19:13:36,766; INFO; File loaded: mocks/ti\anomali_ip_1.2.3.5.json
+2025-09-16 19:13:36,767; WARNING; Indicator value is empty for allowlist check: domains
+2025-09-16 19:13:36,767; WARNING; Indicator value is empty for allowlist check: sha256
+2025-09-16 19:13:36,767; INFO; Alert triaged: severity=65, classification=Medium, suppressed=False
+2025-09-16 19:13:36,768; INFO; File loaded: history/source_alert_sumo-abc.json
+2025-09-16 19:13:36,769; INFO; Output file created: out/incidents/incident_0002.json
+2025-09-16 19:13:36,777; INFO; Output file created: out/summaries/incident_0002.md
