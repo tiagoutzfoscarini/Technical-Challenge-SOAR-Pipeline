@@ -1,0 +1,107 @@
+{
+    "incident_id": "incident_0002",
+    "created_at": "2025-09-16T19:12:58.210365",
+    "source_alert": {
+        "alert_id": "sumo-abc",
+        "source": "sumologic",
+        "type": "Beaconing",
+        "created_at": "2025-08-21T08:11:54Z",
+        "asset": {
+            "device_id": "dev-4421",
+            "hostname": "ENG-DESKTOP-07",
+            "ip": "10.9.5.23"
+        },
+        "indicators": {
+            "ipv4": [
+                "5.6.7.8"
+            ],
+            "domains": [],
+            "urls": [
+                "http://cnc.evil.example/ping"
+            ],
+            "sha256": []
+        },
+        "raw": {
+            "collector": "edge-4",
+            "rule_id": "SM-BEACON-12"
+        }
+    },
+    "asset": {
+        "device_id": "dev-4421",
+        "hostname": "ENG-DESKTOP-07",
+        "ip": "10.9.5.23",
+        "verdict": "unknown",
+        "allowlisted_field": null
+    },
+    "indicators": [
+        {
+            "type": "ipv4",
+            "value": [
+                "5.6.7.8"
+            ],
+            "risk": "unknown",
+            "score": "unknown",
+            "flagged": 0,
+            "allowlisted": false
+        },
+        {
+            "type": "domains",
+            "value": [],
+            "risk": "unknown",
+            "score": "unknown",
+            "flagged": 0
+        },
+        {
+            "type": "urls",
+            "value": [
+                "http://cnc.evil.example/ping"
+            ],
+            "risk": "unknown",
+            "score": "unknown",
+            "flagged": 0,
+            "allowlisted": false
+        },
+        {
+            "type": "sha256",
+            "value": [],
+            "risk": "unknown",
+            "score": "unknown",
+            "flagged": 0
+        }
+    ],
+    "triage": {
+        "severity": 65,
+        "bucket": "Medium",
+        "tags": [
+            "T1071",
+            "suppressed=False"
+        ],
+        "suppressed": false
+    },
+    "mitre": [
+        "T1071"
+    ],
+    "actions": [],
+    "timeline": [
+        {
+            "action": "ingest",
+            "ts": "2025-09-16T19:12:58.207226",
+            "details": "*"
+        },
+        {
+            "action": "enrich",
+            "ts": "2025-09-16T19:12:58.208417",
+            "details": "*"
+        },
+        {
+            "action": "triage",
+            "ts": "2025-09-16T19:12:58.209479",
+            "details": "*"
+        },
+        {
+            "action": "respond",
+            "ts": "2025-09-16T19:12:58.210372",
+            "details": "*"
+        }
+    ]
+}

@@ -182,6 +182,10 @@ def evaluate_indicators(data, allowlist):
     """
     # Check against allowlist
     for indicator in data['indicators']:
+        if indicator['value'] is None or not indicator['value']:
+            logging.warning(f"Indicator value is empty for allowlist check: {indicator['type']}")
+            continue
+
         if indicator['type'] in allowlist['indicators'].keys():
             if indicator['value'][0] in allowlist['indicators'][indicator['type']]:
                 indicator['allowlisted'] = True
@@ -460,9 +464,10 @@ if __name__ == "__main__":
         incident = log_timeline("respond", datetime.now().isoformat(), incident)
 
         # Just for visibility in console
-        print(f"Incident actions taken:")
-        for action in incident.get('actions', []):
-            print(f" - {action['type']} '{action['target']}', result={action['result']}")
+        if incident['actions']:
+            print(f"Incident actions taken:")
+            for action in incident.get('actions', []):
+                print(f" - {action['type']} '{action['target']}', result={action['result']}")
 
     # Step 7. Final outputs
     # Incident JSON

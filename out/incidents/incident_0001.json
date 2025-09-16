@@ -1,0 +1,127 @@
+{
+    "incident_id": "incident_0001",
+    "created_at": "2025-09-16T19:12:56.913892",
+    "source_alert": {
+        "alert_id": "sen-001",
+        "source": "sentinel",
+        "type": "CredentialAccess",
+        "created_at": "2025-08-20T14:03:10Z",
+        "asset": {
+            "device_id": "dev-9001",
+            "hostname": "HR-LAPTOP-22",
+            "ip": "10.2.3.44"
+        },
+        "indicators": {
+            "ipv4": [
+                "1.2.3.4"
+            ],
+            "domains": [
+                "bad.example.net"
+            ],
+            "urls": [
+                "http://bad.example.net/login"
+            ],
+            "sha256": [
+                "7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0"
+            ]
+        },
+        "raw": {
+            "provider": "azure",
+            "workspace": "prod",
+            "rule_id": "AZ-CRED-77"
+        }
+    },
+    "asset": {
+        "device_id": "dev-9001",
+        "hostname": "HR-LAPTOP-22",
+        "ip": "10.2.3.44",
+        "verdict": "unknown",
+        "allowlisted_field": null
+    },
+    "indicators": [
+        {
+            "type": "ipv4",
+            "value": [
+                "1.2.3.4"
+            ],
+            "risk": "suspicious",
+            "score": 80,
+            "flagged": 1,
+            "allowlisted": false
+        },
+        {
+            "type": "domains",
+            "value": [
+                "bad.example.net"
+            ],
+            "risk": "unknown",
+            "score": "unknown",
+            "flagged": 0,
+            "allowlisted": false
+        },
+        {
+            "type": "urls",
+            "value": [
+                "http://bad.example.net/login"
+            ],
+            "risk": "unknown",
+            "score": "unknown",
+            "flagged": 0,
+            "allowlisted": false
+        },
+        {
+            "type": "sha256",
+            "value": [
+                "7b1f4c2d16e0a0b43cbae2f9a9c2dd7e2bb3a0aaad6c0ad66b341f8b7deadbe0"
+            ],
+            "risk": "unknown",
+            "score": "unknown",
+            "flagged": 0,
+            "allowlisted": false
+        }
+    ],
+    "triage": {
+        "severity": 85,
+        "bucket": "High",
+        "tags": [
+            "T1056",
+            "T1555",
+            "suppressed=False"
+        ],
+        "suppressed": false
+    },
+    "mitre": [
+        "T1056",
+        "T1555"
+    ],
+    "actions": [
+        {
+            "type": "isolate",
+            "target": "device:dev-9001",
+            "result": "isolated",
+            "ts": "2025-09-16T19:12:56.914476"
+        }
+    ],
+    "timeline": [
+        {
+            "action": "ingest",
+            "ts": "2025-09-16T19:12:56.907130",
+            "details": "*"
+        },
+        {
+            "action": "enrich",
+            "ts": "2025-09-16T19:12:56.908474",
+            "details": "*"
+        },
+        {
+            "action": "triage",
+            "ts": "2025-09-16T19:12:56.912549",
+            "details": "*"
+        },
+        {
+            "action": "respond",
+            "ts": "2025-09-16T19:12:56.914485",
+            "details": "*"
+        }
+    ]
+}
