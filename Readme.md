@@ -1,12 +1,6 @@
 ####
 
 ### Notes
-##### TI source files
-Consolidated mock TI files into a centralized IOC list, as I would normally do for regular implementations if not querying information real time.
-I would have a normalized IOC list by IOC type or provider first.
-
-##### Enrichment
-Enrichment can definitely be optimized, but for this small implementation that is fine.
-
-##### Final indicator view
-I could definitely present the provider evaluations differently (ex.: ["value", "providers": [{"source":"provider", "risk":"malicious"}]]), but as first version the way it is now is fine.
+- I haven't done much of ingestion or data manipulation with Python for Security stuff lately, I have been using mostly PowerShell for what I need, so some stuff here I am not used to. But it is not a big deal as I already know Python from other uses and can learn quickly.
+- I have never used Jinja before, so that is totally  new for me.
+- Enrichment can definitely be optimized, but for this small implementation that is fine.

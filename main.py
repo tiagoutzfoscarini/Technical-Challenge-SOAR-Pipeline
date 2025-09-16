@@ -459,7 +459,7 @@ if __name__ == "__main__":
     incident = create_incident(triaged_alert_data)
 
     # Step 6. Actions and automated response
-    if incident['triage']['suppressed'] == False:
+    if incident['triage']['suppressed'] == False: # Only take actions if not suppressed
         incident = take_response_action(incident)
         incident = log_timeline("respond", datetime.now().isoformat(), incident)
 
@@ -468,6 +468,7 @@ if __name__ == "__main__":
     output_file(f"out/incidents/{incident['incident_id']}.json", incident)
 
     # Analyst summary report
+    # TODO: Implement Jinja template for summary report
     summary_report = create_analyst_summary(incident)
     output_file(f"out/summaries/{incident['incident_id']}.md", summary_report)
 
