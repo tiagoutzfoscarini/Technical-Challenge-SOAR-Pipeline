@@ -34,7 +34,6 @@ def get_file(file_path):
         with open(file_path, 'r') as file:
             file_data = file.read()
             logging.info(f"File loaded: {file_path}")
-            # return json.loads(file_data)
             return json.loads(file_data) if file_path.endswith('.json') else yaml.safe_load(file_data) if file_path.endswith(('.yml', '.yaml')) else file_data
     except FileNotFoundError:
         logging.error(f"File not found: {file_path}")
@@ -46,7 +45,7 @@ def output_file(file_path, data, format='json'):
     Output data to a specified file path
     :param file_path: output file path
     :param data: data to be written as dict
-    :param format: output file format (default is json, rest is treated as text)
+    :param format: output file format (default is json, rest is treated as text because no other formats are needed here)
     """
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, 'w') as file:
@@ -57,7 +56,8 @@ def output_file(file_path, data, format='json'):
 
 def normalization(data):
     """
-    Normalize the alert data
+    Normalize the alert data, specifically the indicators.
+    Some data is also modified later in enrichment and triage steps.
     Output should contain: alert_id, source, type, created_at, asset, indicators
     :param data: json alert data as dict
     :return: normalized data as dict
@@ -273,14 +273,14 @@ def triage_alert(data):
     # Evaluate assets against allowlist
     data['asset'] = evaluate_assets(data, allowlist)
 
-    # Calculate risk boost based on TI verdicts
-    # If all indicators are allowlisted, set severity to 0
+    # Calculate risk boost based on TI sources
     if all(indicator.get('allowlisted') == True for indicator in data['indicators']):
+        # If all indicators are allowlisted, set severity to 0
         data['suppressed'] = True
         data['severity'] = 0
     else:
-        data['suppressed'] = False
         # Apply risk boost based on highest verdict and number of flagged indicators (20 points for malicious, 10 for suspicious, plus 5 points for each additional flagged indicator, capped at +20 points)
+        data['suppressed'] = False
         risk_boost = 20 if highest_risk == 'malicious' else 10 if highest_risk == 'suspicious' else 0
         if risk_boost > 0:
             risk_boost += min(flagged_indicators - 1, 4) * 5  # Additional boost for multiple flagged indicators, capped at 4 (20 points max)
