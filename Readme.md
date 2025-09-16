@@ -6,5 +6,7 @@ Consolidated mock TI files into a centralized IOC list, as I would normally do f
 I would have a normalized IOC list by IOC type or provider first.
 
 ##### Enrichment
-Enrichment can definitely be reduced and optimized if business rules were established.
-Ex.: always use highest score from all TI proviers evaluated, always use highest risk from all providers evaluated (malicious > suspicious > clean, etc..)
+Enrichment can definitely be optimized.
+
+##### Final indicator view
+I could definitely present the provider evaluations differently (ex.: ["value", "providers": [{"source":"provider", "risk":"malicious"}]]), but as first version the way it is now is fine.

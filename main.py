@@ -3,6 +3,8 @@ import os
 import logging
 import json
 import yaml
+import jinja2
+from datetime import datetime
 
 
 def set_logging():
@@ -16,22 +18,39 @@ def set_logging():
         open('out/log.log', 'w').close()
 
     logging.basicConfig(
-        filename='out/log.log',  # Name of the log file
-        level=logging.INFO,  # Set the logging level (e.g., DEBUG, INFO, WARNING, ERROR, CRITICAL)
-        format='%(asctime)s; %(levelname)s; %(message)s' # Define the log message format
+        filename='out/log.log',
+        level=logging.INFO, 
+        format='%(asctime)s; %(levelname)s; %(message)s'
     )
 
-
-def backup_source_alert(data):
+    
+def get_file(file_path):
     """
-    Backup the source alert data to a file
-    :param data: json alert data as dict
+    Read and return the content of a file
+    :param file_path: path to the file
+    :return: file content as dict
     """
-    backup_path = f"history/source_alert_{data['alert_id']}.json"
+    try:
+        with open(file_path, 'r') as file:
+            file_data = file.read()
+            logging.info(f"File loaded: {file_path}")
+            return json.loads(file_data)
+    except FileNotFoundError:
+        logging.error(f"File not found: {file_path}")
+        return {}
 
-    os.makedirs(os.path.dirname(backup_path), exist_ok=True)
-    with open(backup_path, 'w') as backup_file:
-        json.dump(data, backup_file, indent=4)
+
+def output_file(file_path, data):
+    """
+    Output data to a specified file path
+    :param file_path: output file path
+    :param data: data to be written as dict
+    """
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    with open(file_path, 'w') as file:
+        json.dump(data, file, indent=4)
+    logging.info(f"Output file created: {file_path}")
+
 
 
 def normalization(data):
@@ -69,9 +88,10 @@ def enrich(data):
         logging.error(f"Enrichment source file not found: {enrichment_source_path}")
         return data
     
-
-    # Will treat everything as if there is only one possible value per indicator for simplification, also only enriching with score, risk, and source values
-    # I would also nor enumerate the entire IOC list for searching
+    # Adding only the values for score, risk, and source values
+    # I would also not enumerate the entire IOC list for searching, but since this is a small list I feel like this is acceptable for now
+    # TODO: change indicator view, move flagged, risk and allowlisted to the indicator level instead of the value level
+    # TODO: query local urls instead of single IOC file
     for i in data['indicators']:
         match i['type']:
             case 'ipv4':
@@ -123,6 +143,88 @@ def enrich(data):
     return data
 
 
+def evaluate_indicators(data, allowlist):
+    """
+    Evaluate the alert indicators based on TI verdicts and check against allowlist
+    :param data: alert data as dict
+    :param allowlist: allowlist as dict
+    :return: evaluated indicators as list, count of flagged indicators as int, highest verdict as str
+    """
+    for indicator in data['indicators']:
+        for value in indicator['value']:
+            # Count all TI provider verdicts
+            verdict_count = {
+                'malicious': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'malicious'),
+                'suspicious': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'suspicious'),
+                'allowlisted': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'allowlisted'),
+                'other': sum(1 for entry in value[next(iter(value))] if entry['risk'] not in ['malicious', 'suspicious', 'allowlisted'])
+            }
+            
+            if (verdict_count['malicious'] > 0):
+                value['flagged'] = True
+                value['risk'] = 'malicious'
+            elif (verdict_count['suspicious'] > 0):
+                value['flagged'] = True
+                value['risk'] = 'suspicious'
+                        
+            # Check against allowlist
+            if indicator['type'] in allowlist['indicators'].keys():
+                if next(iter(value)) in allowlist['indicators'][indicator['type']]:
+                    value['flagged'] = False
+                    value['allowlisted'] = True
+                    logging.info(f"Indicator allowlisted: {next(iter(value))}")
+                else:
+                    value['allowlisted'] = False
+            else:
+                value['allowlisted'] = False
+                logging.warning(f"Unknown indicator type for allowlist check: {indicator['type']}")
+
+    # Count how many indicators are flagged as malicious or suspicious
+    flagged_indicators = sum(1 for i in data['indicators'] for value in i['value'] if value.get('flagged', False))
+
+    # Get the highest verdict among all indicators
+    highest_risk = 'unknown'
+
+    if any(value.get('risk') == 'malicious' for i in data['indicators'] for value in i['value']):
+        highest_risk = 'malicious'
+    elif any(value.get('risk') == 'suspicious' for i in data['indicators'] for value in i['value']):
+        highest_risk = 'suspicious'
+
+    return data['indicators'], flagged_indicators, highest_risk
+
+
+def evaluate_assets(data, allowlist):
+    """
+    Evaluate the alert assets against allowlist
+    :param data: alert data as dict
+    :param allowlist: allowlist as dict
+    :return: evaluated assets as list
+    """
+    allowlist_assets = allowlist.get('assets', {})
+
+    for k, v in data['asset'].items(): 
+        match k:
+            case 'device_id':
+                if v in allowlist_assets.get('device_ids', []):
+                    data['asset']['verdict'] = 'allowlisted'
+                    data['asset']['allowlisted_field'] = k
+                    logging.info(f"Asset allowlisted: {k}={v}")
+            case 'ip':
+                # Placeholder - No allowlist for IPs for now
+                pass
+            case 'hostname':
+                # Placeholder - No allowlist for hostnames for now
+                pass
+            case _:
+                logging.warning(f"Unknown asset type: {k}")
+
+    if data['asset'].get('verdict') is None:
+        data['asset']['verdict'] = 'unknown'
+        data['asset']['allowlisted_field'] = None
+
+    return data['asset']
+
+
 def triage_alert(data):
     """
     Triage the alert based on predefined rules
@@ -146,45 +248,13 @@ def triage_alert(data):
     # Load allowlist
     with open("configs/allowlists.yml", 'r') as file:
         allowlist = yaml.safe_load(file)
-    
-    # Evaluate indicators
-    for indicator in data['indicators']:
-        for value in indicator['value']:
-            # Count all TI provider verdicts
-            verdict_count = {
-                'malicious': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'malicious'),
-                'suspicious': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'suspicious'),
-                'allowlisted': sum(1 for entry in value[next(iter(value))] if entry['risk'] == 'allowlisted'),
-                'other': sum(1 for entry in value[next(iter(value))] if entry['risk'] not in ['malicious', 'suspicious', 'allowlisted'])
-            }
-            
-            if (verdict_count['malicious'] > 0):
-                value['flagged'] = True
-                value['verdict'] = 'malicious'
-            elif (verdict_count['suspicious'] > 0):
-                value['flagged'] = True
-                value['verdict'] = 'suspicious'
-                        
-            # Check against allowlist
-            if indicator['type'] in allowlist['indicators']:
-                if next(iter(value)) in allowlist['indicators'][indicator['type']]:
-                    value['flagged'] = False
-                    value['verdict'] = 'allowlisted'
-                    logging.info(f"Indicator allowlisted: {next(iter(value))}")
 
-    # Count how many indicators are flagged as malicious or suspicious
-    flagged_indicators = sum(1 for i in data['indicators'] for value in i['value'] if value.get('flagged', False))
 
-    # Get the highest verdict among all indicators
-    highest_verdict = 'unknown'
+    # Evaluate all alert indicators, and check against allowlist
+    data['indicators'], flagged_indicators, highest_verdict = evaluate_indicators(data, allowlist)
 
-    if any(value.get('verdict') == 'malicious' for i in data['indicators'] for value in i['value']):
-        highest_verdict = 'malicious'
-    elif any(value.get('verdict') == 'suspicious' for i in data['indicators'] for value in i['value']):
-        highest_verdict = 'suspicious'
-
-    # Evaluate asset allowlist
-    # TODO: asset enrichment
+    # Evaluate assets against allowlist
+    data['asset'] = evaluate_assets(data, allowlist)
 
     # Calculate risk boost based on TI verdicts
     # If all indicators are allowlisted, set severity to 0
@@ -226,67 +296,63 @@ def triage_alert(data):
     with open("configs/mitre_map.yml", 'r') as file:
         mitre_mapping = yaml.safe_load(file)
     
-    data['tags'] = mitre_mapping["types"].get(data['type'], mitre_mapping['defaults'])
-
-    data['tags'] += { f"suppressed={data['suppressed']}" }
+    data['mitre_techniques'] = mitre_mapping["types"].get(data['type'], mitre_mapping['defaults'])
+    data['tags'] = data.get('tags', []) + data['mitre_techniques'] + [ f"suppressed={data['suppressed']}" ]
 
     logging.info(f"Alert triaged: severity={data['severity']}, classification={data['severity_classification']}, suppressed={data['suppressed']}")
 
     return data
 
-def get_file(file_path):
-    """
-    Read and return the content of a file
-    :param file_path: path to the file
-    :return: file content as dict
-    """
-    try:
-        with open(file_path, 'r') as file:
-            file_data = file.read()
-            logging.info(f"File loaded: {file_path}")
-            return json.loads(file_data)
-    except FileNotFoundError:
-        logging.error(f"File not found: {file_path}")
-        return {}
 
-def output_isolation_log(data):
+def take_response_action(data):
     """
-    Output the alert isolation log to a file
+    Take automated response actions based on predefined rules
+    :param data: incident data as dict
+    :return: data with actions taken as dict
+    """
+    if data['triage']['severity'] >= 70 and data['asset'].get('device_id') and data['asset'].get('allowlisted_field') != 'device_id':
+        # Isolate the device
+        # Append a line to out/isolation.log:
+        isolation_log_path = "out/isolation.log"
+        with open(isolation_log_path, 'a') as log_file:
+            log_file.write(f"<ISO-TS> isolate device_id={data['asset']['device_id']} incident={data['incident_id']} result=isolated\n")
+        logging.info(f"Device isolated: device_id={data['asset']['device_id']}, incident={data['incident_id']}")
+
+        # Record the action taken
+        if 'actions' not in data:
+            data['actions'] = []
+        
+        data['actions'].append({
+            "type": "isolate",
+            "target": f"device:{data['asset']['device_id']}",
+            "result": "isolated",
+            "ts": datetime.now().isoformat()
+        })
+
+    return data
+
+
+def create_incident(data):
+    """
+    Create an incident from the triaged alert data
     :param data: triaged alert data as dict
+    :return: incident data as dict
     """
-    # TODO: output isolation log
-    output_path = f"out/isolation.log.json"
-
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-
-    # with open(output_path, 'w') as output_file:
-    # <ISO-TS> isolate device_id=<ID> incident=<INCIDENT_ID> result=isolated
-    #     json.dump(data, output_file, indent=4)
-
-    logging.info(f"Alert analysis output to file: {output_path}")
-
-
-def output_incident(data):
-    """
-    Output the alert as an incident to a file according to certain criteria
-    :param data: triaged alert data as dict
-    """
-    # TODO: output incident
-    # Determine next incident ID
+    # Define next incident ID
     next_incident_id = 1
     existing_incidents = os.listdir("out/incidents")
     if existing_incidents:
         next_incident_id = max(int(f.split('_')[1].split('.')[0]) for f in existing_incidents if f.startswith('incident_')) + 1
 
-    output_path = f"out/incidents/{next_incident_id}.json"
+    # Get source alert from history
+    source_alert_path = f"history/source_alert_{data['alert_id']}.json"
+    source_alert = get_file(source_alert_path)
+    if not source_alert:
+        logging.error(f"Source alert not found for incident creation: {source_alert_path}")
+        return {}
 
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-
-    source_alert = get_file(f"history/source_alert_{data['alert_id']}.json")
-
-    # Remove 'suppressed=' tag from tags if present
-    output_format = {
-        "incident_id": data['alert_id'],
+    incident = {
+        "incident_id": f"incident_{next_incident_id:04d}",
         "source_alert": source_alert,
         "asset": data['asset'],
         "indicators": data['indicators'],
@@ -296,56 +362,48 @@ def output_incident(data):
             "tags": data['tags'],
             "suppressed": data['suppressed']
         },
-        "mitre": { "techniques": [tag for tag in data['tags'] if not str(tag).startswith('suppressed=')] },
-        "actions": [], # [ { "type":"isolate","target":"device:<ID>","result":"isolated","ts":"..."} ]
-        "timeline": [] # [ { "stage":"ingest|enrich|triage|respond", "ts":"...", "details":"..." } 
+        "mitre": data['mitre_techniques'],
+        "actions": data.get('actions', []),
+        "timeline": data['timeline']
     }
 
-    print(json.dumps(output_format, indent=2)) # DEBUG
-
-    # with open(output_path, 'w') as output_file:
-    #     json.dump(data, output_file, indent=4)
-
-    logging.info(f"Alert analysis output to file: {output_path}")
+    return incident
 
 
-def output_analyst_summary(data):
+def create_analyst_summary(data):
     """
-    Output a summary for the analyst to a markdown file
-    :param data: triaged alert data as dict
+    Create an analyst summary report in markdown format
+    :param data: incident data as dict
+    :return: summary report as str
     """
-    # TODO: output analyst summary
-    pass
+    template_loader = jinja2.FileSystemLoader(searchpath="./templates")
+    template_env = jinja2.Environment(loader=template_loader)
+    template = template_env.get_template("summary_report.md.j2")
+
+    summary_report = template.render(incident=data)
+
+    return summary_report
 
 
-def ingest_alert(alert_file_path):
+def log_timeline(action, ts, data):
     """
-    Ingest the alert from the specified file path
-    :param alert_file_path: alert file path
+    Log an action to the incident timeline
+    :param action: action stage performed
+    :param ts: timestamp of the action
+    :param data: alert or incident data as dict
+    :return: updated data with timeline entry as dict
     """
-    # Step 1. Read the alert
-    with open(alert_file_path, 'r') as file:
-            alert_data = file.read()
+    if 'timeline' not in data:
+        data['timeline'] = []
 
-    # Convert string data to dictionary
-    alert_data = json.loads(alert_data)
+    data['timeline'].append({
+        "action": action,
+        "ts": ts,
+        "details": "*"  # Placeholder for additional details if needed
+    })
 
-    # Step 2. Backup the original alert data
-    backup_source_alert(alert_data)
+    return data
 
-    # Step 3. Normalize
-    normalized_data = normalization(alert_data)
-
-    # Step 4. Enrich
-    enriched_data = enrich(normalized_data)
-
-    # Step 5. Triage
-    triaged_alert = triage_alert(enriched_data)
-
-    # Step 6. Output the final alert data
-    # print(json.dumps(triaged_alert, indent=2))
-    # output_isolation_log(triaged_alert)
-    output_incident(triaged_alert)
 
 if __name__ == "__main__":
     set_logging()
@@ -359,5 +417,35 @@ if __name__ == "__main__":
     print(f"Alert file path: {alert_file_path}")
     logging.info(f"Alert file path: {alert_file_path}")
 
-    ingest_alert(alert_file_path)
+    # Step 1. Ingest the alert and backup the original alert data
+    alert_data = get_file(alert_file_path)
+    # Backup source alert to history
+    output_file(f"history/source_alert_{alert_data['alert_id']}.json", alert_data)
+    alert_data = log_timeline("ingest", datetime.now().isoformat(), alert_data)
+
+    # Step 2. Normalize
+    alert_data = normalization(alert_data)
+
+    # Step 3. Enrich
+    alert_data = enrich(alert_data)
+    alert_data = log_timeline("enrich", datetime.now().isoformat(), alert_data)
+    
+    # Step 4. Triage
+    triaged_alert_data = triage_alert(alert_data)
+    triaged_alert_data = log_timeline("triage", datetime.now().isoformat(), triaged_alert_data)
+
+    # Step 5. Define incident schema
+    incident = create_incident(triaged_alert_data)
+
+    # Step 6. Actions and automated response
+    incident = take_response_action(incident)
+    incident = log_timeline("respond", datetime.now().isoformat(), incident)
+
+    # Step 7. Final outputs
+    # Incident JSON
+    output_file(f"out/incidents/{incident['incident_id']}.json", incident)
+
+    # Analyst summary report
+    summary_report = create_analyst_summary(incident)
+    output_file(f"out/summaries/{incident['incident_id']}.md", summary_report)
 

@@ -1,0 +1,20 @@
+# Analyst Summary Report
+Incident ID: {{ incident.incident_id }}
+Severity: {{ incident.severity }}
+
+## Indicators table
+
+## Tags
+{% for tag in incident.tags %}
+- {{ tag }}
+{% endfor %}
+
+## Mitre ATT&CK Techniques
+{% for mitre in incident.mitre %}
+- {{ mitre.id }} - {{ mitre.name }}
+{% endfor %}
+
+## Actions taken
+{% for action in incident.actions %}
+- {{ action }}
+{% endfor %}
