@@ -1,20 +1,25 @@
-# Analyst Summary Report
-Incident ID: {{ incident.incident_id }}
-Severity: {{ incident.severity }}
+# Incident Summary Report
 
-## Indicators table
+## Incident ID: {{ incident.incident_id }}
 
-## Tags
-{% for tag in incident.tags %}
-- {{ tag }}
+**Date:** {{ incident.created_at }}
+
+**Severity:** {{ incident.triage.bucket }}
+
+**Tags:** {{ incident.triage.tags | join(", ") }}
+
+**Mitre ATT&CK Techniques:** {{ incident.mitre | join(", ") }}
+
+### Indicators
+| Type | Value | Risk | Score | Allowlisted |
+| ---- | ----- | ---- | ----- | ------------ |
+{% for indicator in incident.indicators %}
+| {{ indicator.type }} | {{ indicator.value }} | {{ indicator.risk }} | {{ indicator.score }} | {{ indicator.allowlisted }} |
 {% endfor %}
 
-## Mitre ATT&CK Techniques
-{% for mitre in incident.mitre %}
-- {{ mitre.id }} - {{ mitre.name }}
-{% endfor %}
-
-## Actions taken
+### Actions Taken
+| Timestamp | Action Type | Target | Result |
+| --------- | ----------- | ------ | ------ |
 {% for action in incident.actions %}
-- {{ action }}
+| {{ action.ts }} | {{ action.type }} | {{ action.target }} | {{ action.result }} |
 {% endfor %}

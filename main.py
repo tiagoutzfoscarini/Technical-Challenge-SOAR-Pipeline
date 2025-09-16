@@ -41,17 +41,18 @@ def get_file(file_path):
         return {}
 
 
-def output_file(file_path, data):
+def output_file(file_path, data, format='json'):
     """
     Output data to a specified file path
     :param file_path: output file path
     :param data: data to be written as dict
+    :param format: output file format (default is json, rest is treated as text)
     """
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, 'w') as file:
-        json.dump(data, file, indent=4)
-    logging.info(f"Output file created: {file_path}")
+        json.dump(data, file, indent=4) if format == 'json' else file.write(data)
 
+    logging.info(f"Output file created: {file_path}")
 
 
 def normalization(data):
@@ -80,15 +81,6 @@ def enrich(data):
     :param data: normalized alert data as dict
     :return: enriched data as dict
     """
-    # enrichment_source_path = "sources/ioc_list.json"
-    # try:
-    #     with open(enrichment_source_path, 'r') as file:
-    #         enrichment_data = json.load(file)
-    #         logging.info(f"Enrichment source file loaded: {enrichment_source_path}")
-    # except FileNotFoundError:
-    #     logging.error(f"Enrichment source file not found: {enrichment_source_path}")
-    #     return data
-
     sources = get_file("configs/connectors.yml")
 
     for provider in sources['providers']:
@@ -361,19 +353,24 @@ def create_incident(data):
     """
     # Define next incident ID
     next_incident_id = 1
-    existing_incidents = os.listdir("out/incidents")
+    try:
+        existing_incidents = os.listdir("out/incidents")
+    except FileNotFoundError:
+        existing_incidents = []
+
     if existing_incidents:
         next_incident_id = max(int(f.split('_')[1].split('.')[0]) for f in existing_incidents if f.startswith('incident_')) + 1
 
     # Get source alert from history
-    source_alert_path = f"history/source_alert_{data['alert_id']}.json"
-    source_alert = get_file(source_alert_path)
+    source_alert = get_file(f"history/source_alert_{data['alert_id']}.json")
+
     if not source_alert:
-        logging.error(f"Source alert not found for incident creation: {source_alert_path}")
+        logging.error(f"Source alert not found for incident creation: {data['alert_id']}")
         return {}
 
     incident = {
         "incident_id": f"incident_{next_incident_id:04d}",
+        "created_at": datetime.now().isoformat(),
         "source_alert": source_alert,
         "asset": data['asset'],
         "indicators": data['indicators'],
@@ -397,10 +394,9 @@ def create_analyst_summary(data):
     :param data: incident data as dict
     :return: summary report as str
     """
-    template_loader = jinja2.FileSystemLoader(searchpath="./templates")
-    template_env = jinja2.Environment(loader=template_loader)
-    template = template_env.get_template("summary_report.md.j2")
-
+    env = jinja2.Environment(loader=jinja2.FileSystemLoader("templates"))
+    template = env.get_template("summary_report.md.j2")
+    
     summary_report = template.render(incident=data)
 
     return summary_report
@@ -463,12 +459,17 @@ if __name__ == "__main__":
         incident = take_response_action(incident)
         incident = log_timeline("respond", datetime.now().isoformat(), incident)
 
+        # Just for visibility in console
+        print(f"Incident actions taken:")
+        for action in incident.get('actions', []):
+            print(f" - {action['type']} '{action['target']}', result={action['result']}")
+
     # Step 7. Final outputs
     # Incident JSON
     output_file(f"out/incidents/{incident['incident_id']}.json", incident)
+    print(f"Exported incident in 'out/incidents/{incident['incident_id']}.json'")
 
     # Analyst summary report
-    # TODO: Implement Jinja template for summary report
     summary_report = create_analyst_summary(incident)
-    output_file(f"out/summaries/{incident['incident_id']}.md", summary_report)
-
+    output_file(f"out/summaries/{incident['incident_id']}.md", summary_report, 'md')
+    print(f"Exported analyst summary report in 'out/summaries/{incident['incident_id']}.md'")
